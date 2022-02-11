@@ -1,3 +1,4 @@
+
 #include "vex.h"
 
 using namespace vex;
@@ -10,21 +11,23 @@ brain  Brain;
 // VEXcode device constructors
 controller Controller1 = controller(primary);
 motor leftMotorA = motor(PORT7, ratio18_1, false);
-motor leftMotorB = motor(PORT16, ratio18_1, false);
+motor leftMotorB = motor(PORT15, ratio18_1, false);
 motor_group LeftDriveSmart = motor_group(leftMotorA, leftMotorB);
 motor rightMotorA = motor(PORT9, ratio18_1, true);
 motor rightMotorB = motor(PORT10, ratio18_1, true);
 motor_group RightDriveSmart = motor_group(rightMotorA, rightMotorB);
 inertial TurnGyroSmart = inertial(PORT20);
 smartdrive Drivetrain = smartdrive(LeftDriveSmart, RightDriveSmart, TurnGyroSmart, 319.19, 320, 40, mm, 1);
-motor lift2 = motor(PORT15, ratio18_1, false);
+motor lift2 = motor(PORT16, ratio18_1, false);
 motor lift1 = motor(PORT17, ratio18_1, false);
-motor claw = motor(PORT18, ratio18_1, false);
+motor claw = motor(PORT19, ratio18_1, false);
 motor tray2 = motor(PORT12, ratio18_1, false);
+//triport ThreeWirePort = vex::triport( vex::PORT22 );
 sonar RangeFinder = sonar(Brain.ThreeWirePort.G);
 encoder Encoderleft = encoder(Brain.ThreeWirePort.A);
 encoder Encoderright = encoder(Brain.ThreeWirePort.C);
-
+encoder Encoderback = encoder(Brain.ThreeWirePort.E);
+rotation Rotation18 = rotation(PORT20, false);
 // VEXcode generated functions
 // define variable for remote controller enable/disable
 bool RemoteControlCodeEnabled = true;

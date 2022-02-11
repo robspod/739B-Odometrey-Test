@@ -12,6 +12,8 @@ extern motor tray2;
 extern sonar RangeFinder;
 extern encoder Encoderleft;
 extern encoder Encoderright;
+extern encoder Encoderback;
+extern rotation Rotation18;
 
 /**
  * Used to initialize code/tasks/devices added using tools in VEXcode Pro.
